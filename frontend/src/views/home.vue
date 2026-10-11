@@ -92,10 +92,20 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
         <button
           @click="handleSearch"
-          class="relative overflow-hidden bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-6 px-6 rounded-3xl shadow-xl font-medium text-lg flex items-center justify-center gap-3 group transition-transform hover:scale-[1.02] hover:-translate-y-0.5 active:scale-98"
+          :class="[
+            'relative overflow-hidden bg-gradient-to-r text-white py-6 px-6 rounded-3xl shadow-xl font-medium text-lg flex items-center justify-center gap-3 group transition-transform hover:scale-[1.02] hover:-translate-y-0.5 active:scale-98',
+            isDarkMode
+              ? 'from-cyan-700 to-blue-800 shadow-blue-950/40'
+              : 'from-cyan-500 to-blue-500',
+          ]"
         >
           <div
-            class="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            :class="[
+              'absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-100 transition-opacity duration-300',
+              isDarkMode
+                ? 'from-cyan-600 to-blue-700'
+                : 'from-cyan-400 to-blue-400',
+            ]"
           ></div>
           <BusIcon class="w-6 h-6 relative z-10" />
           <span class="relative z-10">Otobüsün duyurularını al</span>
