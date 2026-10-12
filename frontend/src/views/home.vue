@@ -75,7 +75,7 @@
           />
           <input
             type="text"
-            placeholder="Otobus hatti ara..."
+            placeholder="Otobus hattı ara..."
             v-model="searchQuery"
             @keydown.enter="handleSearch"
             :class="[
